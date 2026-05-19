@@ -1,380 +1,545 @@
-export default function HumeonWebsite() {
-  return (
-    <div className="min-h-screen bg-[#f5f7fb] text-gray-900 scroll-smooth">
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              src="https://raw.githubusercontent.com/humeonnetwork/humeon-site/main/Humeon%20Partners.png"
-              alt="HUMEON Partners Logo"
-              className="w-11 h-11 rounded-2xl object-cover shadow-lg animate-pulse"
-            />
-            <div>
-              <h1 className="font-bold text-xl tracking-wide">HUMEON Partners</h1>
-              <p className="text-sm text-gray-500">Workforce & Business Operations</p>
-            </div>
-          </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUMEON Partners - Workforce & Business Operations Support</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons for Interactive UI Elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Configuration for Custom Animation and Theme Integration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-[#f5f7fb] text-gray-900 font-sans antialiased overflow-x-hidden selection:bg-violet-200 selection:text-violet-900">
 
-          <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-            <a href="#home" className="hover:text-violet-600 transition">Home</a>
-            <a href="#services" className="hover:text-violet-600 transition">Services</a>
-            <a href="#about" className="hover:text-violet-600 transition">About</a>
-            <a href="#contact" className="hover:text-violet-600 transition">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-14 items-center"
-      >
-        <div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 text-violet-700 text-sm font-medium mb-6">
-            Modern Operational Support
-          </div>
-
-          <h2 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Operational support designed to reduce workflow pressure and improve business consistency.
-          </h2>
-
-          <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            HUMEON Partners supports businesses through payroll coordination, bookkeeping assistance, workflow management, and operational support designed around organized execution and responsive communication.
-          </p>
-
-          <div className="bg-white/80 backdrop-blur-sm border border-violet-100 rounded-3xl p-6 shadow-lg mb-10 max-w-2xl">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Many businesses already use payroll and accounting software — but operational challenges still arise through delayed follow-ups, inconsistent workflows, communication gaps, and growing administrative pressure.
-            </p>
-
-            <p className="text-lg text-gray-700 leading-relaxed mt-4">
-              HUMEON Partners helps reduce operational workload through structured coordination, organized support processes, and dependable workflow management so internal teams can focus more on business priorities, client relationships, and growth.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#services"
-              className="px-7 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition"
-            >
-              Know More
-            </a>
-
-            <a
-              href="#contact"
-              className="px-7 py-4 rounded-2xl border border-gray-300 bg-white hover:border-violet-500 hover:text-violet-600 transition font-semibold"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-
-        <div className="relative flex justify-center">
-          <div className="absolute w-72 h-72 bg-violet-300/30 blur-3xl rounded-full"></div>
-
-          <div className="relative bg-white rounded-[32px] shadow-2xl p-12 animate-bounce [animation-duration:4s]">
-            <img
-              src="https://raw.githubusercontent.com/humeonnetwork/humeon-site/main/Humeon%20Partners.png"
-              alt="HUMEON Partners"
-              className="w-44 h-44 object-contain drop-shadow-2xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-violet-600 font-semibold mb-3">Our Services</p>
-            <h3 className="text-4xl font-bold mb-5">
-              Operational support built around clarity, coordination, and consistency.
-            </h3>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-              Tailored support solutions designed around evolving business needs,
-              operational coordination, and scalable workflow management.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-10">
-            {/* Payroll Card */}
-            <div className="group bg-[#f8f9fd] rounded-[32px] p-10 border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white text-2xl mb-8 shadow-lg">
-                💼
-              </div>
-
-              <h4 className="text-3xl font-bold mb-5">Payroll Services</h4>
-
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Reliable payroll coordination designed to support workforce
-                accuracy, timely submissions, compliance-related processes, and
-                seamless day-to-day business operations.
-              </p>
-
-              <div className="border-t border-gray-200 pt-8 space-y-5 text-gray-600 leading-relaxed">
-                <p>
-                  Payroll operations involve far more than salary processing
-                  alone. Consistency, timely coordination, organized workflows,
-                  and operational accuracy all play a critical role in
-                  supporting day-to-day business performance.
-                </p>
-
-                <p>
-                  Our approach emphasizes responsive communication, structured
-                  process coordination, and dependable operational support
-                  tailored around evolving business environments.
-                </p>
-              </div>
-            </div>
-
-            {/* Bookkeeping Card */}
-            <div className="group bg-[#f8f9fd] rounded-[32px] p-10 border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white text-2xl mb-8 shadow-lg">
-                📊
-              </div>
-
-              <h4 className="text-3xl font-bold mb-5">
-                Accounting & Bookkeeping Support
-              </h4>
-
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Structured bookkeeping support designed to help businesses
-                maintain organized records, financial clarity, and operational
-                efficiency.
-              </p>
-
-              <div className="border-t border-gray-200 pt-8 space-y-5 text-gray-600 leading-relaxed">
-                <p>
-                  Effective bookkeeping supports more than financial
-                  organization — it helps businesses maintain operational
-                  visibility, improve workflow consistency, and support
-                  informed day-to-day decision-making.
-                </p>
-
-                <p>
-                  HUMEON Partners focuses on practical support, operational
-                  consistency, and scalable business workflows designed for
-                  modern business environments.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Humeon */}
-      <section className="py-24 bg-[#f5f7fb]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-violet-600 font-semibold mb-3">Why HUMEON</p>
-            <h3 className="text-4xl font-bold mb-5">
-              Designed around operational consistency and responsive support.
-            </h3>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-[28px] p-8 shadow-lg border border-gray-100 hover:-translate-y-2 transition">
-              <div className="text-4xl mb-6">⚙️</div>
-              <h4 className="text-2xl font-bold mb-4">Structured Workflows</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Reliable operational coordination designed around consistency,
-                clarity, and organized business workflows.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[28px] p-8 shadow-lg border border-gray-100 hover:-translate-y-2 transition">
-              <div className="text-4xl mb-6">🤝</div>
-              <h4 className="text-2xl font-bold mb-4">Responsive Communication</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Focused on timely coordination, dependable communication, and
-                smooth operational collaboration.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[28px] p-8 shadow-lg border border-gray-100 hover:-translate-y-2 transition">
-              <div className="text-4xl mb-6">📈</div>
-              <h4 className="text-2xl font-bold mb-4">Scalable Support</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Operational support designed to adapt alongside evolving
-                business environments and growing operational needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How We Work */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-violet-600 font-semibold mb-3">How We Work</p>
-            <h3 className="text-4xl font-bold mb-5">
-              A workflow designed around organized execution and operational visibility.
-            </h3>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-              Our process is designed to maintain visibility, responsive coordination,
-              and organized operational support throughout each stage of engagement.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200 shadow-sm hover:shadow-xl transition">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl mb-6">
-                01
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Initial Discussion</h4>
-              <p className="text-gray-600 leading-relaxed">
-                We begin by understanding your current workflows, operational requirements,
-                coordination challenges, and business priorities.
-              </p>
-            </div>
-
-            <div className="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200 shadow-sm hover:shadow-xl transition">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl mb-6">
-                02
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Workflow Coordination</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Structured processes are aligned around payroll support, bookkeeping coordination,
-                timelines, communication flow, and operational consistency.
-              </p>
-            </div>
-
-            <div className="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200 shadow-sm hover:shadow-xl transition">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl mb-6">
-                03
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Execution & Reporting</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Operational tasks, workflow coordination, and support processes are managed
-                through responsive communication and organized execution.
-              </p>
-            </div>
-
-            <div className="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200 shadow-sm hover:shadow-xl transition">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl mb-6">
-                04
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Ongoing Support</h4>
-              <p className="text-gray-600 leading-relaxed">
-                We continue supporting evolving operational requirements through
-                scalable coordination, consistent workflows, and dependable communication.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-violet-600 font-semibold mb-3">About Us</p>
-
-          <h3 className="text-4xl font-bold mb-8">
-            About HUMEON Partners
-          </h3>
-
-          <p className="text-gray-600 text-xl leading-relaxed">
-            HUMEON Partners is a modern operational support company focused on helping businesses reduce workflow pressure through payroll coordination, bookkeeping assistance, and structured operational support.
-          </p>
-
-          <p className="text-gray-600 text-xl leading-relaxed mt-6">
-            Our approach is designed around organized execution, responsive communication, and dependable workflow coordination tailored for evolving business environments.
-          </p>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-24 bg-[#f5f7fb]">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white rounded-[36px] p-10 md:p-14 shadow-2xl border border-gray-100">
-            <div className="text-center mb-12">
-              <p className="text-violet-600 font-semibold mb-3">Contact Us</p>
-              <h3 className="text-4xl font-bold mb-5">
-                Let’s discuss your operational support requirements.
-              </h3>
-              <p className="text-gray-600 text-lg">
-                We typically respond within 24 business hours.
-              </p>
-            </div>
-
-            <form
-              action="https://formsubmit.co/pankaj@humeonpartners.com"
-              method="POST"
-              className="grid gap-6"
-            >
-              <input
-                type="hidden"
-                name="_captcha"
-                value="false"
-              />
-
-              <input
-                type="hidden"
-                name="_subject"
-                value="New Inquiry - HUMEON Partners"
-              />
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  className="w-full rounded-2xl border border-gray-300 px-5 py-4 outline-none focus:border-violet-500"
-                  required
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-200/80 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img
+                    src="https://raw.githubusercontent.com/humeonnetwork/humeon-site/main/Humeon%20Partners.png"
+                    alt="HUMEON Partners Logo"
+                    class="w-11 h-11 rounded-2xl object-cover shadow-lg hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://placehold.co/100x100/6366f1/ffffff?text=HP'"
                 />
+                <div>
+                    <h1 class="font-bold text-xl tracking-wide text-gray-900">HUMEON Partners</h1>
+                    <p class="text-xs sm:text-sm text-gray-500 font-medium">Workforce & Business Operations</p>
+                </div>
+            </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="w-full rounded-2xl border border-gray-300 px-5 py-4 outline-none focus:border-violet-500"
-                  required
-                />
-              </div>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex gap-8 text-sm font-semibold text-gray-600" id="desktop-menu">
+                <a href="#home" class="nav-link text-violet-600 transition duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-violet-600 after:transform after:scale-x-100 transition-transform">Home</a>
+                <a href="#services" class="nav-link hover:text-violet-600 transition duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-violet-600 after:transform after:scale-x-0 hover:after:scale-x-100 transition-transform">Services</a>
+                <a href="#about" class="nav-link hover:text-violet-600 transition duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-violet-600 after:transform after:scale-x-0 hover:after:scale-x-100 transition-transform">About</a>
+                <a href="#contact" class="nav-link hover:text-violet-600 transition duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-violet-600 after:transform after:scale-x-0 hover:after:scale-x-100 transition-transform">Contact</a>
+            </nav>
 
-              <input
-                type="text"
-                name="company"
-                placeholder="Company Name"
-                className="w-full rounded-2xl border border-gray-300 px-5 py-4 outline-none focus:border-violet-500"
-              />
-
-              <textarea
-                name="message"
-                placeholder="Tell us a little about your operational or workflow requirements..."
-                rows="6"
-                className="w-full rounded-2xl border border-gray-300 px-5 py-4 outline-none focus:border-violet-500"
-                required
-              ></textarea>
-
-              <button
-                type="submit"
-                className="w-full md:w-fit px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition"
-              >
-                Send Inquiry
-              </button>
-            </form>
-          </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="md:hidden flex items-center justify-center p-2 rounded-xl text-gray-600 hover:text-violet-600 hover:bg-gray-100 focus:outline-none transition-colors duration-200" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-5">
-          <div>
-            <h4 className="font-bold text-xl">HUMEON Partners</h4>
-            <p className="text-gray-500 mt-1">
-              Workforce & Business Operations
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div class="hidden md:hidden bg-white/95 border-b border-gray-200 transition-all duration-300 shadow-xl overflow-hidden" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:bg-violet-50 hover:text-violet-600 transition">Home</a>
+                <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:bg-violet-50 hover:text-violet-600 transition">Services</a>
+                <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:bg-violet-50 hover:text-violet-600 transition">About</a>
+                <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:bg-violet-50 hover:text-violet-600 transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+        <div class="space-y-6 lg:space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 text-violet-700 text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-violet-600 animate-pulse"></span>
+                Modern Operational Support
+            </div>
+
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.15] tracking-tight">
+                Operational support designed to reduce workflow pressure and improve business consistency.
+            </h2>
+
+            <p class="text-lg sm:text-xl text-gray-600 leading-relaxed font-normal">
+                HUMEON Partners supports businesses through payroll coordination, bookkeeping assistance, workflow management, and operational support designed around organized execution and responsive communication.
             </p>
-          </div>
 
-          <div className="text-gray-500 text-sm text-center md:text-right">
-            © 2026 HUMEON Partners. All rights reserved.
-          </div>
+            <div class="bg-white/85 backdrop-blur-sm border border-violet-100 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 max-w-2xl space-y-4">
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                    Many businesses already use payroll and accounting software — but operational challenges still arise through delayed follow-ups, inconsistent workflows, communication gaps, and growing administrative pressure.
+                </p>
+
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed pt-2 border-t border-gray-100">
+                    HUMEON Partners helps reduce operational workload through structured coordination, organized support processes, and dependable workflow management so internal teams can focus more on business priorities, client relationships, and growth.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a
+                    href="#services"
+                    class="px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-blue-500 text-white font-semibold shadow-lg hover:shadow-violet-500/30 hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 flex items-center gap-2"
+                >
+                    <span>Know More</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+
+                <a
+                    href="#contact"
+                    class="px-8 py-4 rounded-2xl border border-gray-300 bg-white hover:border-violet-500 hover:text-violet-600 hover:shadow-md active:scale-[0.98] transition-all duration-300 font-semibold text-gray-700"
+                >
+                    Contact Us
+                </a>
+            </div>
         </div>
-      </footer>
-    </div>
-  );
-}
+
+        <div class="relative flex justify-center lg:justify-end py-10 lg:py-0">
+            <!-- Decorative Blurred Glow Backdrop -->
+            <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-violet-300/30 blur-[80px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+            <!-- Floating Image Wrapper -->
+            <div class="relative bg-white rounded-[32px] shadow-2xl p-8 sm:p-12 animate-float-slow border border-gray-100/50 hover:scale-[1.02] transition-transform duration-500">
+                <img
+                    src="https://raw.githubusercontent.com/humeonnetwork/humeon-site/main/Humeon%20Partners.png"
+                    alt="HUMEON Partners Corporate Identity"
+                    class="w-36 h-36 sm:w-48 sm:h-48 object-contain drop-shadow-2xl"
+                    onerror="this.src='https://placehold.co/200x200/6366f1/ffffff?text=HUMEON'"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#f5f7fb]/20 via-white to-[#f5f7fb]/20 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 lg:mb-20">
+                <p class="text-violet-600 font-extrabold uppercase tracking-widest text-xs sm:text-sm mb-3">Our Services</p>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 max-w-4xl mx-auto leading-tight">
+                    Operational support built around clarity, coordination, and consistency.
+                </h3>
+                <p class="text-gray-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+                    Tailored support solutions designed around evolving business needs, operational coordination, and scalable workflow management.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Payroll Card -->
+                <div class="group bg-[#f8f9fd] rounded-[32px] p-8 sm:p-10 border border-gray-200/60 hover:shadow-2xl hover:border-violet-100 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-violet-500/15 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+
+                        <h4 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-5">Payroll Services</h4>
+
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
+                            Reliable payroll coordination designed to support workforce accuracy, timely submissions, compliance-related processes, and seamless day-to-day business operations.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-gray-200/80 pt-8 space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed">
+                        <p>
+                            Payroll operations involve far more than salary processing alone. Consistency, timely coordination, organized workflows, and operational accuracy all play a critical role in supporting day-to-day business performance.
+                        </p>
+                        <p class="font-medium text-violet-600">
+                            Our approach emphasizes responsive communication, structured process coordination, and dependable operational support.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bookkeeping Card -->
+                <div class="group bg-[#f8f9fd] rounded-[32px] p-8 sm:p-10 border border-gray-200/60 hover:shadow-2xl hover:border-violet-100 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-violet-500/15 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <h4 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-5">Accounting & Bookkeeping Support</h4>
+
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
+                            Structured bookkeeping support designed to help businesses maintain organized records, financial clarity, and operational efficiency.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-gray-200/80 pt-8 space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed">
+                        <p>
+                            Effective bookkeeping supports more than financial organization — it helps businesses maintain operational visibility, improve workflow consistency, and support informed day-to-day decision-making.
+                        </p>
+                        <p class="font-medium text-violet-600">
+                            HUMEON Partners focuses on practical support, operational consistency, and scalable workflows built for modern dynamics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Humeon Section -->
+    <section class="py-24 bg-[#f5f7fb]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-violet-600 font-extrabold uppercase tracking-widest text-xs sm:text-sm mb-3">Why HUMEON</p>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5 max-w-3xl mx-auto leading-tight">
+                    Designed around operational consistency and responsive support.
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Point 1 -->
+                <div class="bg-white rounded-[28px] p-8 shadow-lg hover:shadow-2xl border border-gray-100/85 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-violet-50 flex items-center justify-center text-violet-600 text-2xl mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Structured Workflows</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Reliable operational coordination designed around consistency, clarity, and organized business workflows.
+                    </p>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="bg-white rounded-[28px] p-8 shadow-lg hover:shadow-2xl border border-gray-100/85 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-violet-50 flex items-center justify-center text-violet-600 text-2xl mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Responsive Communication</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Focused on timely coordination, dependable communication, and smooth operational collaboration.
+                    </p>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="bg-white rounded-[28px] p-8 shadow-lg hover:shadow-2xl border border-gray-100/85 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-violet-50 flex items-center justify-center text-violet-600 text-2xl mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-chart-line animate-pulse"></i>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Scalable Support</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Operational support designed to adapt alongside evolving business environments and growing operational needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-violet-600 font-extrabold uppercase tracking-widest text-xs sm:text-sm mb-3">How We Work</p>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5 leading-tight max-w-4xl mx-auto">
+                    A workflow designed around organized execution and operational visibility.
+                </h3>
+                <p class="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Our process is designed to maintain visibility, responsive coordination, and organized operational support throughout each stage of engagement.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Step 01 -->
+                <div class="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violet-100/30 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-black text-lg mb-6 shadow-md shadow-violet-500/10">
+                        01
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Initial Discussion</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base relative z-10">
+                        We begin by understanding your current workflows, operational requirements, coordination challenges, and business priorities.
+                    </p>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violet-100/30 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-black text-lg mb-6 shadow-md shadow-violet-500/10">
+                        02
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Workflow Alignment</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base relative z-10">
+                        Structured processes are aligned around payroll support, bookkeeping coordination, timelines, and communication flow.
+                    </p>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violet-100/30 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-black text-lg mb-6 shadow-md shadow-violet-500/10">
+                        03
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Execution & Reports</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base relative z-10">
+                        Operational tasks, workflow coordination, and support processes are managed through responsive and organized execution.
+                    </p>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="bg-[#f8f9fd] rounded-[28px] p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violet-100/30 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 flex items-center justify-center text-white font-black text-lg mb-6 shadow-md shadow-violet-500/10">
+                        04
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Ongoing Support</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base relative z-10">
+                        We continue supporting evolving requirements through scalable coordination, consistent workflows, and dependable communication.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#f8f9fd] relative overflow-hidden">
+        <!-- Abstract shape backgrounds -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-violet-200/20 blur-[100px] rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/20 blur-[100px] rounded-full"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <p class="text-violet-600 font-extrabold uppercase tracking-widest text-xs sm:text-sm mb-3">About Us</p>
+
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8 tracking-tight">
+                About HUMEON Partners
+            </h3>
+
+            <div class="space-y-6 text-gray-600 text-lg sm:text-xl leading-relaxed font-normal">
+                <p>
+                    HUMEON Partners is a modern operational support company focused on helping businesses reduce workflow pressure through payroll coordination, bookkeeping assistance, and structured operational support.
+                </p>
+
+                <p class="pt-2">
+                    Our approach is designed around organized execution, responsive communication, and dependable workflow coordination tailored for evolving business environments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#f5f7fb]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[36px] p-8 md:p-14 shadow-2xl border border-gray-100/80">
+                <div class="text-center mb-12">
+                    <p class="text-violet-600 font-extrabold uppercase tracking-widest text-xs sm:text-sm mb-3">Contact Us</p>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                        Let’s discuss your operational support requirements.
+                    </h3>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        We typically respond within 24 business hours.
+                    </p>
+                </div>
+
+                <!-- FormSubmit Integration -->
+                <form
+                    action="https://formsubmit.co/pankaj@humeonpartners.com"
+                    method="POST"
+                    class="grid gap-6"
+                    id="contact-form"
+                >
+                    <!-- FormSubmit Configuration Fields -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Inquiry - HUMEON Partners">
+                    <!-- Standard Success Redirect (optional, FormSubmit standard page is used if left empty, but configured safely) -->
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="relative">
+                            <input
+                                type="text"
+                                name="name"
+                                id="form-name"
+                                placeholder="Full Name"
+                                class="w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-5 py-4 outline-none focus:border-violet-500 focus:bg-white focus:ring-2 focus:ring-violet-200 transition-all text-gray-800"
+                                required
+                            />
+                        </div>
+
+                        <div class="relative">
+                            <input
+                                type="email"
+                                name="email"
+                                id="form-email"
+                                placeholder="Email Address"
+                                class="w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-5 py-4 outline-none focus:border-violet-500 focus:bg-white focus:ring-2 focus:ring-violet-200 transition-all text-gray-800"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <input
+                            type="text"
+                            name="company"
+                            id="form-company"
+                            placeholder="Company Name"
+                            class="w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-5 py-4 outline-none focus:border-violet-500 focus:bg-white focus:ring-2 focus:ring-violet-200 transition-all text-gray-800"
+                        />
+                    </div>
+
+                    <div class="relative">
+                        <textarea
+                            name="message"
+                            id="form-message"
+                            placeholder="Tell us a little about your operational or workflow requirements..."
+                            rows="6"
+                            class="w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-5 py-4 outline-none focus:border-violet-500 focus:bg-white focus:ring-2 focus:ring-violet-200 transition-all text-gray-800 resize-none"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                        <button
+                            type="submit"
+                            class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-blue-500 text-white font-semibold shadow-lg hover:shadow-violet-500/35 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                        >
+                            <span>Send Inquiry</span>
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+                        
+                        <p class="text-xs text-gray-400 text-center sm:text-right flex items-center gap-2">
+                            <i class="fa-solid fa-lock"></i> Secure form delivery by FormSubmit.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-white border-t border-gray-200 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="font-extrabold text-xl text-gray-900 tracking-wide">HUMEON Partners</h4>
+                <p class="text-gray-500 mt-1 text-sm font-medium">
+                    Workforce & Business Operations Support
+                </p>
+            </div>
+
+            <div class="flex items-center gap-6 text-gray-400 text-lg">
+                <a href="#home" class="hover:text-violet-600 transition" aria-label="Go to Home"><i class="fa-solid fa-house"></i></a>
+                <a href="#contact" class="hover:text-violet-600 transition" aria-label="Contact support"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#services" class="hover:text-violet-600 transition" aria-label="Our services"><i class="fa-solid fa-briefcase"></i></a>
+            </div>
+
+            <div class="text-gray-400 text-xs sm:text-sm text-center md:text-right font-medium">
+                &copy; 2026 HUMEON Partners. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Pure Vanilla JS Implementation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            // 1. Sticky Header Shadow and Sizing Effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'py-2');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.remove('shadow-md', 'py-2');
+                    header.classList.add('py-4');
+                }
+            });
+
+            // 2. Mobile Hamburger Toggle Handling
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu if clicked outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu on clicking any navigation link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+
+            // 3. Dynamic Active Navigation Indicator on Scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollPosition = window.scrollY + 120; // offset
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Handle desktop menu styling active state dynamically
+                navLinks.forEach(link => {
+                    link.classList.remove('text-violet-600', 'after:scale-x-100');
+                    link.classList.add('hover:text-violet-600', 'text-gray-600', 'after:scale-x-0');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-violet-600', 'after:scale-x-100');
+                        link.classList.remove('text-gray-600', 'after:scale-x-0');
+                    }
+                });
+
+                // Handle mobile menu dynamic active state styling
+                mobileNavLinks.forEach(link => {
+                    link.classList.remove('bg-violet-50', 'text-violet-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('bg-violet-50', 'text-violet-600');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
